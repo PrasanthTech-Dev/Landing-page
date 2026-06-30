@@ -29,7 +29,7 @@ export default function Audience() {
   return (
     <section className="who-section reveal">
       <h2 className="section-title">
-        Who is <u>Kurtis</u> for?
+        Who is Kurtis for?
       </h2>
       <div className="cards">
         {AUDIENCE.map((item, i) => (
