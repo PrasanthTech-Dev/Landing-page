@@ -27,7 +27,7 @@ export default function Features() {
         Still more? <a href="#">Take a look to our features games</a>
       </div>
       <section className="how-section">
-        <h2 className="section-title" style={{ display: "block", textAlign: "center" }}>
+        <h2 className="section-title reveal" style={{ display: "block", textAlign: "center" }}>
           How does Kurtis work?
         </h2>
         {STEPS.map((step) => (

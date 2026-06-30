@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import Home from "./pages/Home";
+import { ThemeProvider } from "./ThemeContext";
 
 export default function App() {
   useEffect(() => {
-    const reveals = document.querySelectorAll(".reveal");
+    const reveals = document.querySelectorAll(".reveal, .stagger-item");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -16,5 +17,9 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
-  return <Home />;
+  return (
+    <ThemeProvider>
+      <Home />
+    </ThemeProvider>
+  );
 }

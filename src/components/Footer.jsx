@@ -54,8 +54,8 @@ export default function Footer() {
             ))}
           </div>
         </div>
-        {FOOTER_COLUMNS.map((col) => (
-          <div className="footer-col" key={col.title}>
+        {FOOTER_COLUMNS.map((col, i) => (
+          <div className="footer-col stagger-item" style={{ "--delay": `${i * 0.1}s` }} key={col.title}>
             <h4>{col.title}</h4>
             {col.links.map((link) => (
               <a href="#" key={link}>

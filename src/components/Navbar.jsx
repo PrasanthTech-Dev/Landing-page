@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import LogoMark from "./LogoMark";
+import { useTheme } from "../ThemeContext";
 
 const MENU_ITEMS = [
   { icon: "📖", label: "School" },
@@ -14,6 +15,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const panelRef = useRef(null);
   const btnRef = useRef(null);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     function handleClick(e) {
@@ -38,6 +40,15 @@ export default function Navbar() {
         </div>
         <nav>
           <span className="lang">EN ▾</span>
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle dark mode"
+            title="Toggle dark / light mode"
+          >
+            <span className="theme-toggle-emoji">{theme === "light" ? "🌙" : "☀️"}</span>
+            <span className="theme-toggle-label">{theme === "light" ? "Dark" : "Light"}</span>
+          </button>
           <a className="btn btn-primary" href="#">Sign up</a>
           <a className="btn btn-outline" href="#">Log in</a>
           <div className="burger-menu">
